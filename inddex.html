@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ile dni</title>
+</head>
+<body>
+    <div>
+        <label for="start">Data twoich narodzin:</label> <br />
+        <input type="date" id="data" name="data">
+    </div>
+     
+    <script>
+   function start() {
+        var dzis = new Date();
+        var data = document.getElementById("data").valueAsDate;
+        document.getElementById("odp").value = Math.floor((dzis.getTime() - data.getTime()) / 1000 / 60 / 60 / 24);
+    }
+    </script>
+
+    <div>
+        <button id="button" onclick="start()">Oblicz</button>
+    </div>
+    <div>
+        <label for="wynik">Tyle dni było po twoich urodzinach</label> <br />
+        <input type="text" id="odp" name="odp" readonly>
+    </div>
+</body>
